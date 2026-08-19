@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ls -tmp
+
+### -t is to sort by time, last modified first
+### -m is to fill width with a comma separated list of entries
+### -p is append / indicator to directories
