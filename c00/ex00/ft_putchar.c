@@ -8,6 +8,7 @@ void	ft_putchar(char c)
 int	main(void)
 {
 	ft_putchar('a');
-	write(1, "\n", 1);
+	ft_putchar('\n');
 	ft_putchar('b');
+	ft_putchar('\n');
 }
