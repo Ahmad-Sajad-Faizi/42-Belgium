@@ -31,7 +31,7 @@ char *ft_strcapitalize(char *str)
 	}
 	return (i);
 }
-/*
+
 #include <stdio.h>
 
 int main (void)
@@ -43,4 +43,4 @@ int main (void)
 	printf("after: %s\n", str);
 	return(0);
 }
-*/
+

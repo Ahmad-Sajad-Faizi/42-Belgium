@@ -21,7 +21,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	dest [j] = '\0';
 	return (i);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
@@ -34,4 +34,4 @@ int	main(void)
 	printf("Test 1: dest = '%s', return = %u\n", dest, result);
 	return(0);
 }
-*/
+

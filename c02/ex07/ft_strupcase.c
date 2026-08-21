@@ -13,7 +13,7 @@ char	*ft_strupcase(char *str)
 	}
 	return(i);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -23,4 +23,4 @@ int	main(void)
 	printf("after: %s\n", test1);
 	return(0);
 }
-*/
+

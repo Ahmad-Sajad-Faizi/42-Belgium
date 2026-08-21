@@ -15,7 +15,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return(i);
 }
-/*
+
 #include <stdio.h>
 int main(void)
 {
@@ -26,4 +26,4 @@ int main(void)
 	printf("dest: %s\n",dest);
 	return(0);
 }
-*/
+

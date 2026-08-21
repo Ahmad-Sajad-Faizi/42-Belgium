@@ -10,7 +10,7 @@ int	ft_str_is_uppercase(char *str)
 	}
 	return(1);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
@@ -26,4 +26,4 @@ int	main(void)
 	printf("test 4 (): %d\n", ft_str_is_uppercase(test4));
 	return(0);
 }
-*/
+

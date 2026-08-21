@@ -10,7 +10,7 @@ int	ft_str_is_numeric(char *str)
 	}
 	return(1);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -25,4 +25,4 @@ int	main(void)
 	printf("test 4 (sdafasdfj): %d\n", ft_str_is_numeric(test4));
 	return(0);
 }
-*/
+

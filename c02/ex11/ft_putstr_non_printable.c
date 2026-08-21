@@ -22,7 +22,7 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
-/*
+
 int	main(void)
 {
 	char str[] = "Hello\nHow are you?";
@@ -30,4 +30,4 @@ int	main(void)
 	write(1, "\n", 1);
 	return(0);
 }
-*/
+
