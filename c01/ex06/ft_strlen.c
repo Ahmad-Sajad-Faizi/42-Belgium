@@ -3,14 +3,12 @@ int	ft_strlen(char *str)
 	int	i;
 	
 	i = 0;
-	while(*str)
+	while(str[i])
 	{
 		i++;
-		str++;
 	}
 	return(i);
 }
-/*
 #include <stdio.h>
 
 int main(void)
@@ -26,4 +24,3 @@ int main(void)
     printf("Length of \"%s\" = %d\n", test4, ft_strlen(test4));
     return (0);
 }
-*/

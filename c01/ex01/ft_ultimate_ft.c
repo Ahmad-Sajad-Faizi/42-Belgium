@@ -2,7 +2,7 @@ void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -23,4 +23,3 @@ int	main(void)
 	printf("after ft_ultimate_ft: %d\n", n);
 	return(0);
 }
-*/
