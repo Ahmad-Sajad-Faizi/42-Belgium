@@ -18,9 +18,9 @@ void	ft_sort_int_tab(int *tab, int size)
 		}
 		if (min_index != i)
 		{
-			l = tab[i];
+			tmp = tab[i];
 			tab[i] = tab[min_index];
-			tab[min_index] = l;
+			tab[min_index] = tmp;
 		}
 		i++;
 	}
