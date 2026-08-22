@@ -1,85 +1,63 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: your_login <your_login@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/15 10:00:00 by your_login        #+#    #+#             */
-/*   Updated: 2026/08/15 10:00:00 by your_login       ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <stdlib.h>
-#include <unistd.h>
 #include "rush01.h"
 
-int	solve(int *clues, int n, int ***grid)
+static int	parse_numbers(const char *str, int nums[SIZE * SIZE])
 {
-	int	*col_mask;
-	int	row;
-	int	col;
+	int	i = 0;
+	int	val;
 
-	*grid = (int **)malloc(n * sizeof(int *));
-	if (!*grid)
-		return (0);
-	row = 0;
-	while (row < n)
+	while (*str)
 	{
-		(*grid)[row] = (int *)malloc(n * sizeof(int));
-		if (!(*grid)[row])
+		while (*str == ' ' || *str == '\t')
+			str++;
+		if (*str == '\0')
+			break;
+		if (*str < '0' || *str > '9')
 			return (0);
-		row++;
+		val = ft_atoi(str);
+		if (val < 1 || val > SIZE)
+			return (0);
+		if (i >= SIZE * SIZE)
+			return (0);
+		nums[i++] = val;
+		while (*str >= '0' && *str <= '9')
+			str++;
 	}
-	col_mask = (int *)malloc(n * sizeof(int));
-	if (!col_mask)
-		return (0);
-	col = 0;
-	while (col < n)
-	{
-		col_mask[col] = 0;
-		col++;
-	}
-	return (backtrack(0, *grid, col_mask, clues, n));
+	return (i == SIZE * SIZE);
 }
 
 int	main(int argc, char **argv)
 {
-	int	*clues;
-	int	n;
-	int	**grid;
-	int	base[MAX_N];
+	int	nums[SIZE * SIZE];
+	int	top[SIZE], bottom[SIZE], left[SIZE], right[SIZE];
+	int	grid[SIZE][SIZE] = {0};
 	int	i;
 
 	if (argc != 2)
 	{
-		write(2, "Error\n", 6);
+		ft_putstr("Error\n");
 		return (1);
 	}
-	if (parse_input(argv[1], &clues, &n))
+	if (!parse_numbers(argv[1], nums))
 	{
-		write(2, "Error\n", 6);
+		ft_putstr("Error\n");
 		return (1);
 	}
+
 	i = 0;
-	while (i < n)
+	while (i < SIZE)
 	{
-		base[i] = i + 1;
+		top[i] = nums[i];
+		bottom[i] = nums[SIZE + i];
+		left[i] = nums[2 * SIZE + i];
+		right[i] = nums[3 * SIZE + i];
 		i++;
 	}
-	g_perm_count = 0;
-	generate_permutations(base, 0, n);
-	if (solve(clues, n, &grid))
+
+	if (!solve(grid, top, bottom, left, right, 0))
 	{
-		print_grid(grid, n);
-		// free memory
-		i = 0;
-		while (i < n)
-			free(grid[i++]);
-		free(grid);
+		ft_putstr("Error\n");
+		return (1);
 	}
-	else
-		write(2, "Error\n", 6);
-	free(clues);
+	print_grid(grid);
 	return (0);
 }
