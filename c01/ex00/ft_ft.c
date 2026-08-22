@@ -2,7 +2,7 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -14,3 +14,4 @@ int	main(void)
 	printf("after ft_ft: %d\n", n);
 	return(0);
 }
+*/

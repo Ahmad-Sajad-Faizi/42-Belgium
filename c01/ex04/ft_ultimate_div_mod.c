@@ -5,7 +5,7 @@ void	ft_ultimate_div_mod(int *a,int *b)
 	*a = tmp / *b;
 	*b = tmp % *b;
 }
-
+/*
 #include <stdio.h>
 
 int main(void)
@@ -18,3 +18,4 @@ int main(void)
 	printf("After ft_ultimate_div_mod: a:%d, b:%d\n", a, b);
 	return(0);
 }
+*/

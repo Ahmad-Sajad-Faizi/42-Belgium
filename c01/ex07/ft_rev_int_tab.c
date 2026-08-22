@@ -12,7 +12,7 @@ void	ft_rev_int_tab(int *tab, int size)
 		i++;
 	}
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -43,4 +43,4 @@ int	main(void)
 
     return (0);
 }
-
+*/

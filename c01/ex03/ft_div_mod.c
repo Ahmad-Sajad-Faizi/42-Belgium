@@ -3,7 +3,7 @@ void	ft_div_mod(int a, int b, int *div, int *mod)
 	*div = a / b;
 	*mod = a % b;
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -16,4 +16,4 @@ int	main(void)
 	printf("after ft_div_mod: a: %d, b: %d div: %d, mod: %d\n",a, b, div, mod);
 	return(0);
 }
-
+*/

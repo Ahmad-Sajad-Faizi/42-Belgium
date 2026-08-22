@@ -1,31 +1,27 @@
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
+	int	i;
 	int j;
-	int min_index;
 	int tmp;
 
 	i = 0;
 	while(i < size - 1)
 	{
-		min_index = i;
-		j = i + 1;
-		while (j < size)
+		j = 0;
+		while(j < size - 1 - i)
 		{
-			if (tab[j] < tab[min_index])
-					min_index = j;
+			if (tab[j] > tab[j + 1])
+			{
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
+			}
 			j++;
-		}
-		if (min_index != i)
-		{
-			tmp = tab[i];
-			tab[i] = tab[min_index];
-			tab[min_index] = tmp;
 		}
 		i++;
 	}
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -55,3 +51,4 @@ int	main(void)
 
     return (0);
 }
+*/

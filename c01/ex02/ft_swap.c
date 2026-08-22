@@ -6,7 +6,7 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -19,3 +19,4 @@ int	main(void)
 	printf("after ft_swap: a = %d, b = %d\n", a, b);
 	return(0);
 }
+*/

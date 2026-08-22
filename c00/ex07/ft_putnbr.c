@@ -7,20 +7,21 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	unsigned int n;
-
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return;
+	}
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		n = -(unsigned int)nb;
+		nb = -nb;
 	}
-	else
-		n = nb;
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
-
+/*
 int main(void)
 {
 	ft_putnbr(42);
@@ -31,3 +32,4 @@ int main(void)
 	ft_putchar('\n');
 	return(0);
 }
+*/
