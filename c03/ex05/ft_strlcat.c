@@ -1,29 +1,27 @@
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int dest_len;
-	unsigned int src_len;
-	i = 0;
-	j = 0;
+	unsigned int	dest_len;
+	unsigned int	src_len;
+	unsigned int	i;
+
 	dest_len = 0;
 	src_len = 0;
+	i = 0;
 	while (dest[dest_len])
 		dest_len++;
 	while (src[src_len])
 		src_len++;
 	if (size <= dest_len)
 		return (size + src_len);
-	i = dest_len;
-	while (j < src_len && i < size - 1)
+	while (i < size - dest_len - 1 && src[i])
 	{
-		dest[i] = src[j];
+		dest[dest_len + i] = src[i];
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
+	dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -65,3 +63,4 @@ int main(void)
 
         return (0);
 }
+*/

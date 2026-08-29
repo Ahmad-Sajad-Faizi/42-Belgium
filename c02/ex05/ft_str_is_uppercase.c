@@ -1,18 +1,20 @@
 int	ft_str_is_uppercase(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while(str[i])
 	{
-		if (!(*str >= 'A' && *str <= 'Z'))
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
 		{
 			return(0);
 		}
-		str++;
+		i++;
 	}
 	return(1);
 }
-
+/*
 #include <stdio.h>
-
 int	main(void)
 {
 	char *test1 = "ADSFASDF";
@@ -26,4 +28,4 @@ int	main(void)
 	printf("test 4 (): %d\n", ft_str_is_uppercase(test4));
 	return(0);
 }
-
+*/

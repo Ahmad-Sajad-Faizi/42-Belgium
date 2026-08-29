@@ -1,45 +1,44 @@
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
     write(1, &c, 1);
 }
-
-void ft_print_combination(int n, int *digits, int index, int start)
+void	ft_print_combn_recursive(int n, int start, int combbo[], int index, int *first)
 {
-    if (index == n)
-    {
-        int i;
+	int	i;
+	if (index == n)
+	{
+		if (!*first)
+			write(1, ", ", 2);
+		*first = 0;
 		i = 0;
-		while(i < n)
+		while (i < n)
 		{
-			ft_putchar(digits[i] + '0');
+			ft_putchar(combo[i] + '0');
 			i++;
 		}
-        if (digits[0] != 10 - n)
-		{
-            ft_putchar(',');
-            ft_putchar(' ');
-        }
-        return;
-    }
-	int	i;
+		return;
+	}
 	i = start;
-	while(i <= 9)
-    {
-        digits[index] = i;
-        ft_print_combination(n, digits, index + 1, i + 1);
+	while (i <= 9 - (n - index))
+	{
+		combo[index] = i;
+		ft_print_combn_recursive(n, i + 1, combo, index + 1, first);
 		i++;
-    }
+	}
 }
-/*
-void ft_print_combn(int n)
+
+void	ft_print_combn(int n)
 {
-    if (n <= 0 || n >= 10)
-        return;
-    int digits[10];
-    ft_print_combination(n, digits, 0, 0);
+	int	comb[9];
+	int	first;
+	first = 1;
+	if (n > 0 && n < 10)
+		ft_print_combn_recursive(n, 0, combo, 0, &first);
 }
+
+/*
 int main(void)
 {
     ft_print_combn(2);

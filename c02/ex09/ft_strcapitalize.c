@@ -1,39 +1,32 @@
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	char	*i;
-	int	j;
+	int	i;
+	int	capitalize_next;
 
-	i = str;
-	j = 1;
-	while(*str)
+	i = 0;
+	capitablize_next = 1;
+	while (str[i])
 	{
-		if ((*str >= 'a' && *str <= 'z') ||
-			(*str >= 'A' && *str <= 'Z') ||
-			(*str >= '0' && *str <= '9'))
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (j)
-			{
-				if (*str >= 'a' && *str <= 'z')
-					*str -= 32;
-				j = 0;
-			}
-			else
-			{
-				if (*str >= 'A' && *str <= 'Z')
-					*str += 32;
-			}
+			if (capitablize_next)
+				str[i] -= 32;
 		}
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			if (!capitablize_next)
+				str[i] += 32;
+		}
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9'))
+			capitablize_next = 0;
 		else
-		{
-			j = 1;
-		}
-		str++;
+			capitablize_next = 1;
+		i++;
 	}
-	return (i);
+	return (str);
 }
-
+/*
 #include <stdio.h>
-
 int main (void)
 {
 	char str[] = "hi, how are you? 42words forty-two; fifty+and+one";
@@ -43,4 +36,4 @@ int main (void)
 	printf("after: %s\n", str);
 	return(0);
 }
-
+*/

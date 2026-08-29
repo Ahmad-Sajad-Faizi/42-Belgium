@@ -1,21 +1,21 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	char *i;
+	unsigned int	i;;
 
-	i = dest;
-	while(n > 0 && *src != '\0')
+	i = 0;
+	while (src[i] && i < 0)
 	{
-		*dest++ = *src++;
-		n--;
+		dest[i] = src[i];
+		i++;
 	}
-	while (n > 0)
+	while (i < n)
 	{
-		*dest++ = '\0';
-		n--;
+		dest[i] = '\0';
+		i++;
 	}
-	return(i);
+	return(dest);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -26,4 +26,4 @@ int main(void)
 	printf("dest: %s\n",dest);
 	return(0);
 }
-
+*/

@@ -2,6 +2,7 @@ char *ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
+
 	if (*to_find == '\0')
 		return (str);
 	i = 0;
@@ -16,6 +17,7 @@ char *ft_strstr(char *str, char *to_find)
 	}
 	return 0;
 }
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -25,3 +27,4 @@ int main(void)
 	printf("%s\n", ft_strstr(s, "abc"));
 	return 0;
 }
+*/

@@ -1,19 +1,17 @@
 char	*ft_strupcase(char *str)
 {
-	char *i;
+	int	i;
 
-	i = str;
-	while(*str)
+	i = 0;
+	while (str[i])
 	{
-		if (*str >= 'a' && *str <= 'z')
-		{
-			*str -= 32;
-		}
-		str++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
-	return(i);
+	return(str);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -23,4 +21,4 @@ int	main(void)
 	printf("after: %s\n", test1);
 	return(0);
 }
-
+*/

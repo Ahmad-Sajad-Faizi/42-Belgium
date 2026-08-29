@@ -1,13 +1,13 @@
 int	ft_strlen(char *str)
 {
-	int	i;
+	int	index;
 	
-	i = 0;
-	while(str[i])
+	index = 0;
+	while(str[index])
 	{
-		i++;
+		index++;
 	}
-	return(i);
+	return(index);
 }
 /*
 #include <stdio.h>
@@ -20,9 +20,9 @@ int main(void)
 	char *test4 = "This is a long text.";
 
 	printf("Length of \"%s\" = %d\n", test1, ft_strlen(test1));
-    printf("Length of \"%s\" = %d\n", test2, ft_strlen(test2));
+	printf("Length of \"%s\" = %d\n", test2, ft_strlen(test2));
 	printf("Length of \"%s\" = %d\n", test3, ft_strlen(test3));
-    printf("Length of \"%s\" = %d\n", test4, ft_strlen(test4));
-    return (0);
+       	printf("Length of \"%s\" = %d\n", test4, ft_strlen(test4));
+	return (0);
 }
 */

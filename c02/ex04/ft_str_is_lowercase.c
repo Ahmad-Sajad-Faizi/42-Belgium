@@ -1,18 +1,20 @@
 int	ft_str_is_lowercase(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while(str[i])
 	{
-		if (!(*str >= 'a' && *str <= 'z'))
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
 			return(0);
 		}
-		str++;
+		i++;
 	}
 	return(1);
 }
-
+/*
 #include <stdio.h>
-
 int main(void)
 {
 	char *test1 = "asdfasfd";
@@ -26,4 +28,4 @@ int main(void)
 	printf("test 4 (123456): %d\n", ft_str_is_lowercase(test4));
 	return(0);
 }
-
+*/

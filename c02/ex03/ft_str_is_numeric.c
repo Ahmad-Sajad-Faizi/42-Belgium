@@ -1,16 +1,19 @@
 int	ft_str_is_numeric(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while(str[i])
 	{
-		if (!(*str >= '0' && *str <= '9'))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 		{
 				return(0);
 		}
-		str++;
+		i++;
 	}
 	return(1);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -25,4 +28,4 @@ int	main(void)
 	printf("test 4 (sdafasdfj): %d\n", ft_str_is_numeric(test4));
 	return(0);
 }
-
+*/

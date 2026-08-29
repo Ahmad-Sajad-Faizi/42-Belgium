@@ -1,20 +1,19 @@
 char *ft_strlowcase(char *str)
 {
-	char *i;
+	int	i;
 
-	i = str;
-	while(*str)
+	i = 0;
+	while(str[i])
 	{
-		if (*str >= 'A' && *str <= 'Z')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			*str+= 32;
+			str[i] += 32;
 		}
-		str++;
+		i++;
 	}
-	return(i);
+	return(str);
 }
-
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -24,4 +23,4 @@ int	main(void)
 	printf("after: %s\n", test1);
 	return(0);
 }
-
+*/

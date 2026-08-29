@@ -1,16 +1,19 @@
 int	ft_str_is_printable(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while(str[i])
 	{
-		if (!(*str >= 32 && *str <= 126))
+		if (!(str[i] >= 32 && str[i] <= 126))
 			{
 				return(0);
 			}
-			str++;
+			i++;
 	}
 	return(1);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -25,4 +28,4 @@ int	main(void)
 	printf("test 4 (asdf 123): %d\n", ft_str_is_printable(test4));
 	return(0);
 }
-
+*/

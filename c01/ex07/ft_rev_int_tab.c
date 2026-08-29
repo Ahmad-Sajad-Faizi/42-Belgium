@@ -1,15 +1,18 @@
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int i;
+	int index;
+	int end;
 	int tmp;
 
-	i = 0;
-	while (i < size / 2)
+	index = 0;
+	end = size - 1;
+	while (index < end)
 	{
-		tmp = tab[i];
-		tab[i] = tab[size - 1 - i];
-		tab[size - 1 - i] = tmp;
+		tmp = tab[index];
+		tab[index] = tab[end];
+		tab[end] = tmp;
 		i++;
+		end--;
 	}
 }
 /*
@@ -22,25 +25,25 @@ int	main(void)
 	int i;
 
 	printf("Original array: ");
-    i = 0;
-    while (i < size)
-    {
+	i = 0;
+       	while (i < size)
+	{
         printf("%d ", arr[i]);
         i++;
-    }
-    printf("\n");
+	}
+	printf("\n");
 
-    ft_rev_int_tab(arr, size);
+	ft_rev_int_tab(arr, size);
 
-    printf("Reversed array: ");
-    i = 0;
-    while (i < size)
-    {
+	printf("Reversed array: ");
+	i = 0;
+	while (i < size)
+	{
         printf("%d ", arr[i]);
         i++;
-    }
-    printf("\n");
+	}
+	printf("\n");
 
-    return (0);
+	return (0);
 }
 */

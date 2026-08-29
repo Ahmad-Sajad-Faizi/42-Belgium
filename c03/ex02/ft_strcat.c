@@ -1,21 +1,20 @@
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	while (dest[i])
-		i++;
-	int	j;
-	j = 0;
-	while (src[j])
+	ptr = dest;
+	while (*ptr)
+		ptr++;
+	while (*src)
 	{
-		dest[i + j] = src[j];
-		j++;
+		*ptr = *src;
+		ptr++;
+		src++;
 	}
-	dest[i + j] = '\0';
-	return dest;
+	*ptr = '\0';
+	return (dest);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -24,3 +23,4 @@ int	main(void)
 	printf("%s\n", dest);
 	return (0);
 }
+*/

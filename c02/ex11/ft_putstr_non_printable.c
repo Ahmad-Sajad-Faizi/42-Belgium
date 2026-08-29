@@ -1,33 +1,39 @@
 #include <unistd.h>
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+void	ft_put_hex(unsigned char c)
+{
+	char *hex;
 
+	hex = "0123456789abcdef";
+	ft_putchar('\\');
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
+}
 void	ft_putstr_non_printable(char *str)
 {
 	int	i;
-	char	*hex_base;
 
 	i = 0;
-	hex_base = "0123456789abcdef";
 	while (str[i])
 	{
 		if (str[i] >= 32 && str[i] <= 126)
 		{
-			write(1, &str[i], 1);
+			ft_putchar(str[i]);
 		}
 		else
-		{
-			write(1, "\\", 1);
-			write(1, &hex_base[(unsigned char)str[i] / 16], 1);
-			write(1, &hex_base[(unsigned char)str[i] % 16], 1);
-		}
+			ft_put_hex(str[i]);
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char str[] = "Hello\nHow are you?";
 	ft_putstr_non_printable(str);
-	write(1, "\n", 1);
+	ft_putchar('\n');	
 	return(0);
 }
-
+*/

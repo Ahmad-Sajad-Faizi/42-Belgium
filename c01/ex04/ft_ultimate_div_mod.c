@@ -1,9 +1,15 @@
 void	ft_ultimate_div_mod(int *a,int *b)
 {
-	int tmp;
-	tmp = *a;
-	*a = tmp / *b;
-	*b = tmp % *b;
+	int	tmp;
+	int	mod;
+
+	if (*b != 0)
+	{
+		div = *a / *b;
+		mod = *a % *b;
+		*a = div;
+		*b = mod;
+	}
 }
 /*
 #include <stdio.h>

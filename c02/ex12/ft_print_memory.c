@@ -81,10 +81,11 @@ void	*ft_print_memory(void *address, unsigned int size)
 	}
 	return (address);
 }
-
+/*
 int main(void)
 {
     char    string[] = "Bonjour les aminches\n\tc est fou\ttout ce qu on peut faire avec\r\n\tprint_memory\r\n\n\tlol.lol\n \0";
     ft_print_memory(string, sizeof(string));
     return (0);
 }
+*/
